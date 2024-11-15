@@ -18,10 +18,23 @@ import (
 )
 
 var (
-	defaultRootFiles = []string{"install.tar", "install.tar.gz", "rootfs.tar", "rootfs.tar.gz", "install.ext4.vhdx", "install.ext4.vhdx.gz"}
+	defaultRootFiles = []string{
+		"install.tar",
+		"install.tar.gz",
+		"install.tgz",
+		"install.tar.zst",
+		"install.tar.xz",
+		"rootfs.tar",
+		"rootfs.tar.gz",
+		"rootfs.tgz",
+		"rootfs.tar.zst",
+		"rootfs.tar.xz",
+		"install.ext4.vhdx",
+		"install.ext4.vhdx.gz",
+	}
 )
 
-//Install installs distribution with default rootfs file names
+// Install installs distribution with default rootfs file names
 func Install(name string, rootPath string, showProgress bool) error {
 	rootPathLower := strings.ToLower(rootPath)
 	if showProgress {
